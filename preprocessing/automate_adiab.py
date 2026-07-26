@@ -1,4 +1,4 @@
-"""Otomatisasi preprocessing Wine Recognition Dataset."""
+"""Otomatisasi preprocessing UCI Banknote Authentication Dataset."""
 
 from pathlib import Path
 
@@ -34,8 +34,10 @@ def preprocess_data(input_path: str | Path, output_path: str | Path | None = Non
 
 if __name__ == "__main__":
     project_root = Path(__file__).resolve().parents[1]
-    raw_path = project_root / "wine_raw.csv"
-    processed_path = Path(__file__).resolve().parent / "wine_preprocessing.csv"
+    raw_path = project_root / "banknote_raw.csv"
+    processed_path = (
+        Path(__file__).resolve().parent / "banknote_preprocessing.csv"
+    )
     result = preprocess_data(raw_path, processed_path)
     print(f"Preprocessing selesai: {result.shape}")
     print(f"Output: {processed_path}")
